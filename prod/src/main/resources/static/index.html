@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+<div id="wrapper">
+    <h2>采坑记录</h2>
+    <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row J_mainContent" id="content-main">
+            <h3>1 Eureka服务器启动后启动控制台报错？</h3>
+            <p>答：关闭spring.freemarker.prefer-file-system-access，禁止优先从文件系统加载template！</p>
+            <h3>2 应用注册不到Eureka上？</h3>
+            <p>答：业务应用必须引入spring-cloud-starter-netflix-eureka-client依赖，特别注意，不要写成了spring-cloud-netflix-eureka-client！</p>
+            <h3>3 机器注册成功后再下线，重新上线后控制台仍然认为该机器处于离线状态？</h3>
+            <p>答：Eureka通过instance-id来定位服务应用，为了准确识别应用，必须保证instance-id不会动态变化！</p>
+            <h3>4 通过主机域名去组装REST-URL无法掉服务？</h3>
+            <p>答：Rest调用时通过应用名称去定位服务，而不是主机域名！</p>
+            <h3>5 通过主机域名eureka.instance.hostname属性定位不到服务，报java.net.UnknownHostException？</h3>
+            <p>答：要使用主机域名来定位服务，先得确保域名解析服务可用，如配置DNS服务器或者修改host文件。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
